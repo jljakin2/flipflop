@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "SteelMan Converter",
+  "version": "1.0",
+  "description": "A Chrome extension to convert an article's argument to its steel-man version.",
+  "permissions": ["activeTab", "https://api.openai.com/*"],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": ["error.html"]
+}
